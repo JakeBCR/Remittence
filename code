@@ -1,0 +1,48 @@
+pragma solidity 0.4.19;
+
+contract Remittence {
+    
+    //storing hashed passwords
+    mapping(uint32) public passwords;
+    
+    //unhashed passwords provided by destination (carol)
+    mapping(uint32) public PwProvided;
+    
+    //setting the destination for the funds (for re-usability)
+    mapping(uint => address) public destination;
+
+    
+    event LogReceiveFunds(uint amount, address sender);
+    event LogDestination(address sender, address destination)
+    event LogPasswords(uint passwords)
+    
+    //depositing the funds into the contract and setting the receivers value
+    
+    function Deposit(address destination, uint value) public payable {
+        require(msg.value > 0);
+        destination[receiver1] += msg.value
+    }
+    
+    
+    function Withdraw(uint32 PwProvided1, uint32 PwProvided2) public {
+        
+        pwProvided[PwProvided1] = 
+        
+        //check password provided with password stored
+        keccak256(PwProvided1) = HashPwProvided1
+        keccak256(PwProvided2) = HashPwProvided2
+        
+        
+        require HashPwProvided1 = passwords[password1];
+        require HashPwProvided2 = passwords[password2];
+        require msg.sender = destination[receiver1];
+        
+
+            msg.sender.transfer()
+
+        
+    }
+
+       
+        
+    }
