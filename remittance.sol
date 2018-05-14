@@ -37,15 +37,14 @@ contract remittance {
         hashPass = 0;   
      }
 
-    function cancelWithdrawl(bytes32 providedPw0) public payable {
+    function cancelWithdrawl(bytes32 providedPw0, uint withdrawBalance) public payable {
     
+        
         bytes providedHash = keccak256(providedPw0);
         require (providedHash0 = hashPass);
-        require (msg.sender = owner);
-        msg.sender.transfer();
+        require (withdrawBalance != 0);
+        msg.sender.transfer(withdrawBalance);
         
-        //WIP
-        hashPass = 0;
-    
+  
     }
 }
